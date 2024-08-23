@@ -1,12 +1,10 @@
 setInterval(function () {
-  let joburgElement = document.querySelector("#joburg");
-  if (joburgElement) {
-    let joburgDateElement = joburgElement.querySelector(".date");
-    let joburgTimeElement = joburgElement.querySelector(".time");
-    joburgDateElement.innerHTML = moment().format("MMMM Do, YYYY");
-    joburgTimeElement.innerHTML = moment()
-      .tz("Africa/Johannesburg")
-      .format("H:mm:s");
+  let cairoElement = document.querySelector("#cairo");
+  if (cairoElement) {
+    let cairoDateElement = cairoElement.querySelector(".date");
+    let cairoTimeElement = cairoElement.querySelector(".time");
+    cairoDateElement.innerHTML = moment().format("MMMM Do, YYYY");
+    cairoTimeElement.innerHTML = moment().tz("Africa/Cairo").format("H:mm:s");
   }
 
   let mauritiusElement = document.querySelector("#mauritius");
@@ -22,6 +20,9 @@ setInterval(function () {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("-", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
