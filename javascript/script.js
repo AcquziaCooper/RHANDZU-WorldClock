@@ -1,20 +1,18 @@
 setInterval(function () {
-  let cairoElement = document.querySelector("#cairo");
-  if (cairoElement) {
-    let cairoDateElement = cairoElement.querySelector(".date");
-    let cairoTimeElement = cairoElement.querySelector(".time");
-    cairoDateElement.innerHTML = moment().format("MMMM Do, YYYY");
-    cairoTimeElement.innerHTML = moment().tz("Africa/Cairo").format("H:mm:s");
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    londonDateElement.innerHTML = moment().format("MMMM Do, YYYY");
+    londonTimeElement.innerHTML = moment().tz("Europe/London").format("H:mm:s");
   }
 
-  let mauritiusElement = document.querySelector("#mauritius");
-  if (mauritiusElement) {
-    let mauritiusDateElement = mauritiusElement.querySelector(".date");
-    let mauritiusTimeElement = mauritiusElement.querySelector(".time");
-    mauritiusDateElement.innerHTML = moment().format("MMMM Do, YYYY");
-    mauritiusTimeElement.innerHTML = moment()
-      .tz("Indian/Mauritius")
-      .format("H:mm:s");
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    tokyoDateElement.innerHTML = moment().format("MMMM Do, YYYY");
+    tokyoTimeElement.innerHTML = moment().tz("Asia/Tokyo").format("H:mm:s");
   }
 }, 1000);
 
